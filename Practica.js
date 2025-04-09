@@ -1,10 +1,12 @@
+// Ejercicio 1: ingresar dos valores y sumarlos
+
 let a=2;
 let b=3;
-let resultado;
+let resultado = a + b;
 
-resultado = a + b; // Suma de a y b
+console.log(`el resultado de la sume entre ${a} y ${b} es ${resultado}`);
 
-console.log("el resultado es ", resultado);
+// Ejercicio 2: Ingresar tres valores e indicar cual es el mayor y cual el menor.
 
 let d=5;
 let e=6;
@@ -22,30 +24,36 @@ else {
 }
 
 if (mayor < f) {    
-    mayor = f; // d es el menor
+    mayor = f; // f es el mayor
 }
 if (menor > f) {
-    menor = f; // e es el menor
+    menor = f; // f es el mayor
 }
 
-console .log("el mayor es ", mayor, " el menor es ", menor);
+console .log(`entre los numeros ${d} ${e} ${f} el mayor es ${mayor} y el menor es ${menor}`);
 
-let palabra = "holacomoestas";
-console.log("la longitud de la palabra es ", palabra.length); // Longitud de la palabra
+// Ejercicio 3: Ingresar una palabra y mostrar: <PALABRA> tiene <n> letras.
+
+let palabra = "javascript";
+console.log(`${palabra} tiene ${palabra.length} letras`); // palabra.length devuelve la cantidad de letras de la palabra
+
+// Ejercicio 4: Ingresar un número e indicar si es par.
 
 let x = 9;
-x = x % 2;
-if (x == 0) {
-    console.log("el numero es par");
+x1 = x % 2; //calcula el resto del numero
+if (x1 == 0) {
+    console.log(`${x} es un numero par`); // si el resto es 0, el numero es par
     
 } else {
-    console.log("el numero es impar y su resto es ", x);
+    console.log(`${x} es un numero impar`); // si el resto es distinto de 0, el numero es impar
 }
- let palabra2 = "queso";
+
+// Ejercicio 5: Ingresar una palabra y un numero "n". Repetir la palabra "n" veces.
+
+ let palabra2 = "repetir";
  let y = 5;
 
- for (let z=0; z != y; z++) {
+ for (let z=0; z != y; z++) { // el for empieza en z=0 y se repite mientras z != y
     console.log(palabra2);
     
  }
- // esto es un test
