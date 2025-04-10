@@ -113,5 +113,79 @@ for (i=0; i < lista.length; i++){
 console.log(`la suma de sus elementos pares es igual a ${sumalista}`)
 
 // Ejercicio 11: Ingresar una palabra e identificar la letras distintas y sus repeticiones.
+// Utilizar un objeto literal
+
+let palabra3 = "pala"
+letras = palabra3.split('')
+let contador = {}
+letras.forEach(element => {
+    if (contador[element]) {
+        contador[element]++;
+    }else {
+        contador[element] = 1;
+    }
+    
+});
+console.log(`La palabra "${palabra3}" esta formada por la siguiente cantidad de letras:`);
+console.log(contador);
+
+// Ejercicio 12: Crear un objeto literal con las siguiente propiedades: nombre, sexo biológico y edad.
+//  Agregar varios elementos a una lista. Obtener el promedio de edad,
+//  el nombre de la mujer con mayor edad, el nombre del hombre con menor edad,
+//  el promedio de edad de las mujeres.
 
 
+let masculino
+let femenino
+
+let persona1 = {nombre: 'Jorge', sexo: masculino , edad: 12,}
+let persona2 = {nombre: 'María', sexo: femenino , edad: 24,}
+let persona3 = {nombre: 'Lucas', sexo: masculino , edad: 32,}
+let persona4 = {nombre: 'José', sexo: masculino , edad: 26,}
+let persona5 = {nombre: 'Sandra', sexo: femenino , edad: 46,}
+
+let listapersonas = [persona1, persona2, persona3, persona4, persona5]
+let promedioedad = 0
+let mayorf = 0
+let nombref = 0
+let menorm = 0
+let nombrem = 0
+let promedioedadf = 0
+let numerof = 0
+
+for (let i = 0; i < listapersonas.length; i++) {
+    promedioedad = promedioedad + listapersonas[i].edad
+    if (listapersonas[i].sexo == femenino){
+        promedioedadf = promedioedadf + listapersonas[i].edad
+        if (mayorf < listapersonas[i].edad){
+            mayorf = listapersonas[i].edad
+            nombref = i
+            numerof++
+        }
+
+    }else{
+        if (menorm > listapersonas[i].edad){
+            menorm = listapersonas[i].edad
+            nombrem = i
+        }
+    }
+}
+promedioedad = promedioedad / listapersonas.length
+promedioedadf = promedioedadf / numerof
+console.log(`en una lista con las siguientes personas: ${listapersonas[0].nombre}, ${listapersonas[1].nombre}, ${listapersonas[2].nombre}, ${listapersonas[3].nombre} y ${listapersonas[4].nombre}`)
+console.log(`el promedio de edad es ${promedioedad}`)
+console.log(`la mujer de mayor edad es ${listapersonas[nombref].nombre}`)
+console.log(`el hombre de menor edad es ${listapersonas[nombrem].nombre}`)
+console.log(`el promedio de edad entre las mujeres es ${promedioedadf}`)
+
+// Ejercicio 13: Para el ejercicio anterior, generar una funcion para cada uno de los requerimientos.
+
+function funcionpromedio(a){
+    let p = 0
+    for (let i = 0; i < a.length; i++) {
+        p = p + a[i].edad
+    }
+    let resultado = p / a.length
+    return resultado
+}
+console.log(`el promedio de edad es ${funcionpromedio(listapersonas)}`)
