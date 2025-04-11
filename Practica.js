@@ -115,7 +115,7 @@ console.log(`la suma de sus elementos pares es igual a ${sumalista}`)
 // Ejercicio 11: Ingresar una palabra e identificar la letras distintas y sus repeticiones.
 // Utilizar un objeto literal
 
-let palabra3 = "pala"
+let palabra3 = "diccionario"
 letras = palabra3.split('')
 let contador = {}
 letras.forEach(element => {
@@ -135,14 +135,11 @@ console.log(contador);
 //  el promedio de edad de las mujeres.
 
 
-let masculino
-let femenino
-
-let persona1 = {nombre: 'Jorge', sexo: masculino , edad: 12,}
-let persona2 = {nombre: 'María', sexo: femenino , edad: 24,}
-let persona3 = {nombre: 'Lucas', sexo: masculino , edad: 32,}
-let persona4 = {nombre: 'José', sexo: masculino , edad: 26,}
-let persona5 = {nombre: 'Sandra', sexo: femenino , edad: 46,}
+let persona1 = {nombre: 'Jorge', sexo: 'masculino', edad: 12,}
+let persona2 = {nombre: 'María', sexo: 'femenino', edad: 24,}
+let persona3 = {nombre: 'Lucas', sexo: 'masculino', edad: 32,}
+let persona4 = {nombre: 'Sandra', sexo: 'femenino', edad: 46,}
+let persona5 = {nombre: 'José', sexo: 'masculino', edad: 26,}
 
 let listapersonas = [persona1, persona2, persona3, persona4, persona5]
 let promedioedad = 0
@@ -155,7 +152,7 @@ let numerof = 0
 
 for (let i = 0; i < listapersonas.length; i++) {
     promedioedad = promedioedad + listapersonas[i].edad
-    if (listapersonas[i].sexo == femenino){
+    if (listapersonas[i].sexo == 'femenino'){
         promedioedadf = promedioedadf + listapersonas[i].edad
         if (mayorf < listapersonas[i].edad){
             mayorf = listapersonas[i].edad
@@ -180,6 +177,14 @@ console.log(`el promedio de edad entre las mujeres es ${promedioedadf}`)
 
 // Ejercicio 13: Para el ejercicio anterior, generar una funcion para cada uno de los requerimientos.
 
+let persona6 = {nombre: 'laura', sexo: 'femenino', edad: 36,}
+let persona7 = {nombre: 'micaela', sexo: 'femenino', edad: 47,}
+let persona8 = {nombre: 'daniela', sexo: 'femenino', edad: 88,}
+let persona9 = {nombre: 'guillermo', sexo: 'masculino', edad: 73,}
+let persona10 = {nombre: 'luciano', sexo: 'masculino', edad: 52,}
+
+listapersonas = [persona1, persona2, persona3, persona4, persona5, persona6, persona7, persona8, persona9, persona10]
+
 function funcionpromedio(a){
     let p = 0
     for (let i = 0; i < a.length; i++) {
@@ -188,4 +193,65 @@ function funcionpromedio(a){
     let resultado = p / a.length
     return resultado
 }
+console.log(`en una lista con las siguientes personas: ${listapersonas[0].nombre}, ${listapersonas[1].nombre}, ${listapersonas[2].nombre}, ${listapersonas[3].nombre}, ${listapersonas[4].nombre}, ${listapersonas[5].nombre}, ${listapersonas[6].nombre}, ${listapersonas[7].nombre}, ${listapersonas[8].nombre} y ${listapersonas[9].nombre}`)
 console.log(`el promedio de edad es ${funcionpromedio(listapersonas)}`)
+
+function funcionmayorf(a){
+    let m = 0
+    let n = 0
+    for (let i = 0; i < a.length; i++) {
+        if (a[i].sexo == 'femenino'){
+            if (m < a[i].edad){
+             m = a[i].edad //este dato va a corresponder a la mayor edad entre las mujeres
+             n = i //este dato va a corresponder a la ubicacion en el array de la mujer con mayor edad
+            }
+        }
+    }
+    let resultado = `la mujer de mayor edad es ${a[n].nombre} y tiene ${m} años`
+    return resultado
+}
+console.log(funcionmayorf(listapersonas))
+
+function funcionmenorm(a){
+    let m = 999
+    let n = 0
+    for (let i = 0; i < a.length; i++) {
+        if (a[i].sexo == 'masculino'){
+            if (m > a[i].edad){
+             m = a[i].edad //este dato va a corresponder a la menor edad entre los hombres
+             n = i //este dato va a corresponder a la ubicacion en el array de el hombre con menor edad
+            }
+        }
+    }
+    let resultado = `el hombre de menor edad es ${a[n].nombre} y tiene ${m} años`
+    return resultado
+}
+console.log(funcionmenorm(listapersonas))
+
+function funcionpromediof(a){
+    let p = 0
+    let m = 0
+     for (let i = 0; i < a.length; i++) {
+         if (a[i].sexo == 'femenino'){
+             p = p + a[i].edad
+             m++
+         }
+     }
+  let resultado = p / m
+  return resultado
+}
+
+console.log(`el promedio de edad de las mujeres es ${funcionpromediof(listapersonas)}`)
+
+// Ejercicio 14: Crear una funcion que reciba 3 parametros: minimo, maximo y divisor.
+//  Devolver una lista con los divisores del numero ingresado.
+
+function divisor(min, max, div){
+    console.log(`los siguientes numeros entre ${min} y ${max} son divisibles por ${div}`)
+    for(i = min; i <= max; i++){
+        if(i % div == 0){
+            console.log(i)
+        }
+    }
+}
+divisor(4, 87, 7)
