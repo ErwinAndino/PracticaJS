@@ -247,11 +247,11 @@ console.log(`el promedio de edad de las mujeres es ${funcionpromediof(listaperso
 //  Devolver una lista con los divisores del numero ingresado.
 
 function divisor(min, max, div){
-    console.log(`los siguientes numeros entre ${min} y ${max} son divisibles por ${div}`)
+    console.log(`los siguientes numeros entre ${min} y ${max} son divisores de ${div}`) //    console.log(`los siguientes numeros entre ${min} y ${max} son divisibles por ${div}`)
     for(i = min; i <= max; i++){
-        if(i % div == 0){
+        if(div % i == 0){ //        if(i % div == 0){
             console.log(i)
         }
     }
 }
-divisor(4, 87, 7)
+divisor(4, 59, 150)
